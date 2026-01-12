@@ -216,7 +216,7 @@
             position: fixed;
             pointer-events: none;
             z-index: 100;
-            animation: sparkle-fall 3s linear forwards;
+            animation: sparkle-fall 10.8s linear forwards;
         }
 
         @keyframes sparkle-fall {
@@ -322,14 +322,14 @@
         function createSparkle() {
             const sparkle = document.createElement('div');
             sparkle.className = 'sparkle';
-            sparkle.innerHTML = ['✨', '⭐', '🌟', '💫'][Math.floor(Math.random() * 4)];
+            sparkle.innerHTML = ['✨', '⭐', '🌟', '💫', '🌹', '🌺', '🌸'][Math.floor(Math.random() * 7)];
             sparkle.style.left = Math.random() * 100 + 'vw';
             sparkle.style.top = '-50px';
             sparkle.style.fontSize = (Math.random() * 20 + 20) + 'px';
-            sparkle.style.color = ['#FFD700', '#FFFFFF', '#D4AF37'][Math.floor(Math.random() * 3)];
+            sparkle.style.color = ['#FFD700', '#FFFFFF', '#D4AF37', '#FF69B4', '#FFB6C1'][Math.floor(Math.random() * 5)];
             document.body.appendChild(sparkle);
 
-            setTimeout(() => sparkle.remove(), 3000);
+            setTimeout(() => sparkle.remove(), 10800);
         }
 
         function unfurlScroll() {
@@ -349,12 +349,12 @@
                 setTimeout(() => createSparkle(), i * 100);
             }
 
-            // Continue sparkles periodically for 5 seconds
+            // Continue sparkles periodically for 10 seconds
             const sparkleInterval = setInterval(() => {
                 createSparkle();
-            }, 500);
+            }, 300);
 
-            setTimeout(() => clearInterval(sparkleInterval), 5000);
+            setTimeout(() => clearInterval(sparkleInterval), 10000);
         }
 
         scrollWrapper.addEventListener('click', unfurlScroll);
